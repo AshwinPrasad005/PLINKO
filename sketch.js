@@ -6,20 +6,33 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Render = Matter.Render;
 
+var particles = [];
+var plinkos = [];
+var divisions = [];
+
+var divisionHeight = 300;
+
 function setup() {
-  createCanvas(600,600);
+  createCanvas(300,600);
 
   engine = Engine.create();
-  world = engine.world;  
+  world = engine.world;
 
-  ground = new Ground(300,590,600,20);
+  for(var k = 0;k <=width; k = k + 80){
+    divisions.push(new Divisions(k , height-divisionHeight/2, 10 , divisionHeight))
+  }
+
+  ground = new Ground(150,590,300,20);
+
 }
 
 function draw() {
   background(80,80,80); 
-  engine.update(Engine); 
+
+  Engine.update(engine);
 
   ground.display();
+  divisions.display();
 
   drawSprites();
 }
