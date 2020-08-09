@@ -1,4 +1,4 @@
-var engine,world,ground,divisions,division1,division2,division3,division4,division5,division6,particles,plinkos,divisionHeight;
+var engine,world,ground,divisions,division1,division2,division3,division4,division5,division6,particles,particle1,plinkos,divisionHeight;
 
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -37,6 +37,14 @@ function draw() {
   background(80,80,80); 
 
   Engine.update(engine);
+
+  if(frameCount%60===0){
+    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
+  }
+
+  for ( var j = 0; j < particles.length ; j++){
+    particles[j].display();
+  }
 
   ground.display();
   division1.display();
