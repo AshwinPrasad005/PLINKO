@@ -1,12 +1,15 @@
 class Particle{
     constructor(x,y,radius,color){
         var options = {
-            isStatic:true
+            firction:1.0,
+            density:0.3,
+            restituition:0.3,
+            isStatic:false
         }
         this.body = Bodies.circle(x,y,radius,options);
-        this.color = color(random(0,255),random(0,255),random(0,255));
+        // this.color = color(random(0,255),random(0,255),random(0,255));
         this.radius = radius;
-        World.add(world,this.body)
+        World.add(world,this.body);
     }
     display(){
         var pos =this.body.position;
@@ -16,7 +19,7 @@ class Particle{
         rotate(angle);
         noStroke();
         ellipseMode(CENTER);
-        fill(this.color);
+        fill("blue");
         ellipse(pos.x,pos.y,this.radius,this.radius);
         pop();
     }
