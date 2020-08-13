@@ -1,10 +1,6 @@
 var engine,world,ground,divisions,division1,division2,division3,division4,division5,division6,particles,particle1,plinkos,divisionHeight;
 
-const Engine = Matter.Engine;
-const World = Matter.World;
-const Bodies = Matter.Bodies;
-const Body = Matter.Body;
-const Render = Matter.Render;
+const { Engine, World, Bodies, Body, Mouse, MouseConstraint, Constraint, Composite, Detector } = Matter;
 
 particles = [];
 plinkos = [];
@@ -29,6 +25,10 @@ function setup() {
 
   for (var k = 0;k < width; k = k + 80){
     divisions.push(new Division(k , height-divisionHeight/2, 10 , divisionHeight));
+  }
+
+  for( var j = 0; j <=width; j=j+50){
+    plinkos.push( new Plinko(j,75))
   }
 
 }
