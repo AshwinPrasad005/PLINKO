@@ -28,7 +28,7 @@ function setup() {
   }
 
   for( var j = 0; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,75))
+    plinkos.push( new Plinko(j,75,25,25))
   }
 
 }
@@ -39,11 +39,15 @@ function draw() {
   Engine.update(engine);
 
   if(frameCount%60===0){
-    particles.push(new Particle(100,30,10,10));
+    particles.push(new Particle(100,10,10,10));
   }
 
   for ( var j = 0; j < particles.length ; j++){
     particles[j].display();
+  }
+
+  for ( var j = 0; j < plinkos.length ; j++){
+    plinkos[j].display();
   }
 
   ground.display();

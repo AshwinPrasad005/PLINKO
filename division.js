@@ -13,6 +13,7 @@ class Division{
         push();
         rectMode(CENTER);
         fill("red");
+        noStroke();
         rect(pos.x,pos.y,this.width,this.height);
         pop();
     }
