@@ -27,8 +27,20 @@ function setup() {
     divisions.push(new Division(k , height-divisionHeight/2, 10 , divisionHeight));
   }
 
-  for( var j = 0; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,75,25,25))
+  for( var j = -25; j <=width; j=j+50){
+    plinkos.push( new Plinko(j,75,15))
+  }
+
+  for( var j = -50; j <=width; j=j+50){
+    plinkos.push( new Plinko(j,125,15))
+  }
+
+  for( var j = -25; j <=width; j=j+50){
+    plinkos.push( new Plinko(j,175,15))
+  }
+
+  for( var j = -50; j <=width; j=j+50){
+    plinkos.push( new Plinko(j,225,15))
   }
 
 }
@@ -38,8 +50,8 @@ function draw() {
 
   Engine.update(engine);
 
-  if(frameCount%60===0){
-    particles.push(new Particle(100,10,10,10));
+  if(frameCount%30===0){
+    particles.push(new Particle(random(50,400),10,10));
   }
 
   for ( var j = 0; j < particles.length ; j++){
