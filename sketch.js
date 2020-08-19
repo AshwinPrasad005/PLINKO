@@ -51,7 +51,7 @@ function draw() {
   Engine.update(engine);
 
   if(frameCount%30===0){
-    particles.push(new Particle(random(50,400),10,10));
+    particles.push(new Particle(random(50,350),30,7.5));
   }
 
   for ( var j = 0; j < particles.length ; j++){
