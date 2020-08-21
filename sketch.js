@@ -28,19 +28,19 @@ function setup() {
   }
 
   for( var j = -25; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,75,15))
+    plinkos.push( new Plinko(j,75,10))
   }
 
   for( var j = -50; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,125,15))
+    plinkos.push( new Plinko(j,125,10))
   }
 
   for( var j = -25; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,175,15))
+    plinkos.push( new Plinko(j,175,10))
   }
 
   for( var j = -50; j <=width; j=j+50){
-    plinkos.push( new Plinko(j,225,15))
+    plinkos.push( new Plinko(j,225,10))
   }
 
 }
